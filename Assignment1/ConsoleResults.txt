@@ -1,0 +1,5 @@
+Dollar word count:    4625
+Program runtime:      1.716 seconds
+Shortest dollar word: buzzy
+Shortest dollar word: back-connected
+Most expensive word:  pneumonoultramicroscopicsilicovolcanoconiosis
