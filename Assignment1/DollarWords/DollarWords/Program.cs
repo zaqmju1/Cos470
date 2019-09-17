@@ -11,10 +11,10 @@ namespace DollarWords
         {
             Stopwatch progRuntime = new Stopwatch();
             progRuntime.Start();
-            String DollarWords = "";
+            StringBuilder DollarWords = new StringBuilder();
             int wordVal = 0;
             int dWordCount = 0;
-            int shortestLen = 101;
+            int shortestLen = 0;
             int longestLen = 0;
             int expensiveWordVal = 0;
             String shortestWord = "";
@@ -28,7 +28,6 @@ namespace DollarWords
             // Set the "words.txt" location and split the words based on new line characters
             var wordFile = File.ReadAllText(dir + "words.txt");
             var words = wordFile.Split("\r\n");
-
 
             // Search for words that total to 100
             for (int i = 0; i < words.Length; i++)
@@ -44,10 +43,10 @@ namespace DollarWords
 
                 if (wordVal == 100)
                 {
-                    DollarWords = DollarWords + words[i] + "\r\n";
+                    DollarWords.Append(words[i] + "\r\n");
                     dWordCount += 1;
 
-                    if (words[i].Length < shortestLen)
+                    if (words[i].Length < shortestLen || shortestLen != 0)
                     {
                         shortestLen = words[i].Length;
                         shortestWord = words[i];
@@ -69,7 +68,7 @@ namespace DollarWords
             }
 
             // Write the dollar words to a new file
-            File.WriteAllText(dir + "DollarWords.txt", DollarWords);
+            File.WriteAllText(dir + "DollarWords.txt", DollarWords.ToString());
 
             progRuntime.Stop();
 
