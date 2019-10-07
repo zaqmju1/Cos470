@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A3ClassLibrary", "A3ClassLibrary\A3ClassLibrary.csproj", "{A5B76ABC-DDD3-46AC-AD60-ABC6B7021BDE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonLocNUnitTest", "..\JsonLocNUnitTest\JsonLocNUnitTest\JsonLocNUnitTest.csproj", "{2258B3E5-7A68-4BED-BAEF-8DAB0358F829}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5B76ABC-DDD3-46AC-AD60-ABC6B7021BDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5B76ABC-DDD3-46AC-AD60-ABC6B7021BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5B76ABC-DDD3-46AC-AD60-ABC6B7021BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5B76ABC-DDD3-46AC-AD60-ABC6B7021BDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2258B3E5-7A68-4BED-BAEF-8DAB0358F829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2258B3E5-7A68-4BED-BAEF-8DAB0358F829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2258B3E5-7A68-4BED-BAEF-8DAB0358F829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2258B3E5-7A68-4BED-BAEF-8DAB0358F829}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D26550B1-5B6F-4174-BD14-6DA993A9AF25}
+	EndGlobalSection
+EndGlobal

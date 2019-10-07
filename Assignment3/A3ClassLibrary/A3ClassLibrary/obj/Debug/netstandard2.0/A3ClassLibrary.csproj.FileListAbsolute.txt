@@ -1,0 +1,9 @@
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\A3ClassLibrary\bin\Debug\netstandard2.0\A3ClassLibrary.deps.json
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\A3ClassLibrary\bin\Debug\netstandard2.0\A3ClassLibrary.dll
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\A3ClassLibrary\bin\Debug\netstandard2.0\A3ClassLibrary.pdb
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\A3ClassLibrary\obj\Debug\netstandard2.0\A3ClassLibrary.csprojAssemblyReference.cache
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\A3ClassLibrary\obj\Debug\netstandard2.0\A3ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\A3ClassLibrary\obj\Debug\netstandard2.0\A3ClassLibrary.AssemblyInfoInputs.cache
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\A3ClassLibrary\obj\Debug\netstandard2.0\A3ClassLibrary.AssemblyInfo.cs
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\A3ClassLibrary\obj\Debug\netstandard2.0\A3ClassLibrary.dll
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\A3ClassLibrary\obj\Debug\netstandard2.0\A3ClassLibrary.pdb
