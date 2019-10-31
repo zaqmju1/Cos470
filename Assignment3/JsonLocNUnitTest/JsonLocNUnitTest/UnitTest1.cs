@@ -5,63 +5,43 @@ using System;
 
 namespace Tests
 {
-    //Template
-    //DateTime a = new DateTime(1991, 2, 20, 1, 2, 3);
-    //DateTime b = new DateTime(1993, 5, 21, 3, 3, 3);
-    //DateTime c = new DateTime(1993, 6, 20, 6, 3, 28);
-    //DateTime d = new DateTime(1993, 6, 20, 6, 29, 1);
-    //DateTime e = new DateTime(1993, 6, 20, 7, 2, 22);
-    //DateTime f = new DateTime(1993, 6, 20, 8, 2, 11);
-    //DateTime g = new DateTime(1993, 6, 21, 1, 22, 49);
-    //DateTime h = new DateTime(1993, 6, 21, 2, 23, 44);
-    //DateTime i = new DateTime(1993, 6, 21, 8, 2, 10);
-    //DateTime j = new DateTime(1993, 6, 28, 9, 9, 9);
+    public class BuildLocArray
+    {
+        [SetUp]
+        public void Setup()
+        {
+        }
 
-    //Loc A = null;
-    //Loc B = new Loc(a, 12, 13);
-    //Loc C = new Loc(b, 13, 12);
-    //Loc D = new Loc(c, 22, 14);
-    //Loc E = new Loc(d, 21, 13);
-    //Loc F = new Loc(e, 53, 12);
-    //Loc G = new Loc(f, 52, 15);
-    //Loc H = new Loc(g, 53, 53);
-    //Loc I = new Loc(h, 52, 49);
-    //Loc J = new Loc(i, 60, 59);
-    //Loc K = new Loc(j, 57, 24);
+        [Test]
+        public void InvalidPathTest()
+        {
+            Location[] a = BuildLocArray("Hello");
 
-    //Loc[] aa = null;
+            Assert.IsNull(a);
+        }
 
-    //Loc[] ab = new Loc[4];
-    //ab[0] = A;
-    //ab[1] = B;
-    //ab[2] = C;
-    //ab[3] = D;
+        [Test]
+        public void SuccessTest()
+        {
+            String dir = System.IO.Directory.GetCurrentDirectory();
+            dir = dir.Substring(0, dir.LastIndexOf("bin\\Debug\\netcoreapp2.1")) + "Sample.json";
 
-    //Loc[] ac = new Loc[4];
-    //ac[0] = B;
-    //ac[1] = C;
-    //ac[2] = D;
-    //ac[3] = E;
+            Location[] locations1 = BuildLocArray(dir);
 
-    //Loc[] ad = new Loc[3];
-    //ad[0] = F;
-    //ad[1] = G;
-    //ad[2] = H;
+            Assert.IsTrue(locations1[1].timestampMs == "1548894299192");
+        }
 
-    //Loc[] ae = new Loc[5];
-    //ae[0] = B;
-    //ae[1] = C;
-    //ae[2] = D;
-    //ae[3] = E;
-    //ae[4] = F;
+        [Test]
+        public void FailTest()
+        {
+            String dir = System.IO.Directory.GetCurrentDirectory();
+            dir = dir.Substring(0, dir.LastIndexOf("bin\\Debug\\netcoreapp2.1")) + "Sample.json";
 
-    //Loc[] af = new Loc[5];
-    //af[0] = G;
-    //af[1] = H;
-    //af[2] = I;
-    //af[3] = J;
-    //af[4] = K;
+            Location[] locations1 = BuildLocArray(dir);
 
+            Assert.IsFalse(locations1[1].timestampMs == "1548895839283");
+        }
+    }
 
     public class AlibiTests
     {
@@ -73,34 +53,37 @@ namespace Tests
         [Test]
         public void NullTest()
         {
-            Loc[] aa = null;
+            Location[] aa = null;
 
-            Loc[] q = Alibi(aa, 1993, 6, 20);
+            Location[] q = Alibi(aa, ConvertL("1548895149104"), ConvertL("1548895390341"));
 
-            Assert.IsTrue(q == null);
+            Assert.IsNull(q);
         }
 
         [Test]
         public void SuccessTest()
         {
-            DateTime a = new DateTime(1991, 2, 20, 1, 2, 3);
-            DateTime b = new DateTime(1993, 5, 21, 3, 3, 3);
-            DateTime c = new DateTime(1993, 6, 20, 6, 3, 28);
+            String dir = System.IO.Directory.GetCurrentDirectory();
+            dir = dir.Substring(0, dir.LastIndexOf("bin\\Debug\\netcoreapp2.1")) + "Sample.json";
 
-            Loc A = null;
-            Loc B = new Loc(a, 12, 13);
-            Loc C = new Loc(b, 13, 12);
-            Loc D = new Loc(c, 22, 14);
+            Location[] locations1 = BuildLocArray(dir);
 
-            Loc[] ab = new Loc[4];
-            ab[0] = A;
-            ab[1] = B;
-            ab[2] = C;
-            ab[3] = D;
+            Location[] q = Alibi(locations1, 1548895149104, 1548895390341);
 
-            Loc[] q = Alibi(ab, 1993, 6, 20);
+            Assert.IsTrue(q.Length == 3 && q[2].timestampMs != null);
+        }
 
-            Assert.IsTrue(q.Length == 1);
+        [Test]
+        public void FailTest()
+        {
+            String dir = System.IO.Directory.GetCurrentDirectory();
+            dir = dir.Substring(0, dir.LastIndexOf("bin\\Debug\\netcoreapp2.1")) + "Sample.json";
+
+            Location[] locations1 = BuildLocArray(dir);
+
+            Location[] q = Alibi(locations1, ConvertL("1548895149104"), ConvertL("1548895390341"));
+
+            Assert.IsFalse(q.Length == 6);
         }
 
     }
@@ -115,48 +98,44 @@ namespace Tests
         [Test]
         public void NullTest()
         {
-            Loc[] aa = null;
+            Location[] aa = null;
 
-            Loc[] locations1 = aa;
-            Loc[] locations2 = aa;
+            Location[] locations1 = aa;
+            Location[] locations2 = aa;
 
-            Loc q = HaveMet(locations1, locations2, 60, 20);
+            Location q = HaveMet(locations1, locations2, 3600000, 20);
 
-            Assert.IsTrue(q == null);
+            Assert.IsNull(q);
         }
 
         [Test]
         public void SuccessTest()
         {
-            DateTime a = new DateTime(1991, 2, 20, 1, 2, 3);
-            DateTime b = new DateTime(1993, 5, 21, 3, 3, 3);
-            DateTime c = new DateTime(1993, 6, 20, 6, 3, 28);
-            DateTime d = new DateTime(1993, 6, 20, 6, 29, 1);
+            String dir = System.IO.Directory.GetCurrentDirectory();
+            dir = dir.Substring(0, dir.LastIndexOf("bin\\Debug\\netcoreapp2.1")) + "Sample.json";
 
-            Loc A = null;
-            Loc B = new Loc(a, 12, 13);
-            Loc C = new Loc(b, 13, 12);
-            Loc D = new Loc(c, 22, 14);
-            Loc E = new Loc(d, 21, 13);
 
-            Loc[] ab = new Loc[4];
-            ab[0] = A;
-            ab[1] = B;
-            ab[2] = C;
-            ab[3] = D;
+            Location[] locations1 = BuildLocArray(dir);
+            Location[] locations2 = BuildLocArray(dir);
 
-            Loc[] ac = new Loc[4];
-            ac[0] = B;
-            ac[1] = C;
-            ac[2] = D;
-            ac[3] = E;
+            Location q = HaveMet(locations1, locations2, 3600000, 20);
 
-            Loc[] locations1 = ab;
-            Loc[] locations2 = ac;
+            Assert.IsTrue(q.timestampMs == "1548895511286");
+        }
 
-            Loc q = HaveMet(locations1, locations2, 60, 20);
+        [Test]
+        public void FailTest()
+        {
+            String dir = System.IO.Directory.GetCurrentDirectory();
+            dir = dir.Substring(0, dir.LastIndexOf("bin\\Debug\\netcoreapp2.1")) + "Sample.json";
 
-            Assert.IsTrue(q.time.Year == 1993 && q.time.Month == 6 && q.time.Day == 20);
+
+            Location[] locations1 = BuildLocArray(dir);
+            Location[] locations2 = BuildLocArray(dir);
+
+            Location q = HaveMet(locations1, locations2, 3600000, 20);
+
+            Assert.IsFalse(q.timestampMs == "1548881511286");
         }
 
     }
