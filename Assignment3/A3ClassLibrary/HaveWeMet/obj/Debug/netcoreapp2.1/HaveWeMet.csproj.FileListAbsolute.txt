@@ -1,0 +1,17 @@
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\bin\Debug\netcoreapp2.1\HaveWeMet.deps.json
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\bin\Debug\netcoreapp2.1\HaveWeMet.runtimeconfig.json
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\bin\Debug\netcoreapp2.1\HaveWeMet.runtimeconfig.dev.json
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\bin\Debug\netcoreapp2.1\HaveWeMet.dll
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\bin\Debug\netcoreapp2.1\A3ClassLibrary.dll
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\bin\Debug\netcoreapp2.1\A3ClassLibrary.pdb
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\obj\Debug\netcoreapp2.1\HaveWeMet.csprojAssemblyReference.cache
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\obj\Debug\netcoreapp2.1\HaveWeMet.csproj.CoreCompileInputs.cache
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\obj\Debug\netcoreapp2.1\HaveWeMet.RazorAssemblyInfo.cache
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\obj\Debug\netcoreapp2.1\HaveWeMet.RazorAssemblyInfo.cs
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\obj\Debug\netcoreapp2.1\HaveWeMet.AssemblyInfoInputs.cache
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\obj\Debug\netcoreapp2.1\HaveWeMet.AssemblyInfo.cs
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\obj\Debug\netcoreapp2.1\HaveWeMet.RazorTargetAssemblyInfo.cache
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\obj\Debug\netcoreapp2.1\HaveWeMet.csproj.CopyComplete
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\bin\Debug\netcoreapp2.1\HaveWeMet.pdb
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\obj\Debug\netcoreapp2.1\HaveWeMet.dll
+C:\Users\Jesse\source\repos\Cos470\Assignment3\A3ClassLibrary\HaveWeMet\obj\Debug\netcoreapp2.1\HaveWeMet.pdb
