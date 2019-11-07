@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using static A3ClassLibrary.JsonLoc;
 
 namespace HaveWeMet.Controllers
@@ -13,19 +14,29 @@ namespace HaveWeMet.Controllers
     public class ValuesController : ControllerBase
     {
 
+        public class Configs
+        {
+            public int msThreshold { get; set; }
+            public int distThreshold { get; set; }
+            public long msLowerLimit { get; set; }
+            public long msUpperLimit { get; set; }
+        }
+
         public ValuesController()
         {
-            String dir1 = System.IO.Directory.GetCurrentDirectory();
-            dir1 = dir1 + "\\VeryShortHistory.json";
-            String dir2 = System.IO.Directory.GetCurrentDirectory();
-            dir2 = dir2 + "\\ShortHistory.json";
+            String dir = System.IO.Directory.GetCurrentDirectory();
+            String file1Loc = dir + "\\VeryShortHistory.json";
+            String file2Loc = dir + "\\ShortHistory.json";
 
-            locations1 = BuildLocArray(dir1);
-            locations2 = BuildLocArray(dir2);
+            cfig = JsonConvert.DeserializeObject<Configs>(System.IO.File.ReadAllText(dir + "\\Settings.json"));
+
+            locations1 = BuildLocArray(file1Loc);
+            locations2 = BuildLocArray(file2Loc);
         }
 
         public Location[] locations1 { set; get; }
         public Location[] locations2 { set; get; }
+        public Configs cfig { set; get; }
 
 
         // GET HaveMet values
@@ -33,11 +44,11 @@ namespace HaveWeMet.Controllers
         //public ActionResult<IEnumerable<string>> GetHaveMet()
         //{
         //    string[] locStr = new string[4];
-        //    Location hm = HaveMet(locations1, locations1, 3600000, 20);
+        //    Location hm = HaveMet(locations1, locations1, cfig.msThreshold, cfig.distThreshold);
 
         //    locStr[0] = "Most recently location met:";
         //    locStr[1] = "Latitude: " + hm.latitudeE7.ToString();
-        //    locStr[2] = "Longitude" + hm.longitudeE7.ToString();
+        //    locStr[2] = "Longitude:" + hm.longitudeE7.ToString();
         //    locStr[3] = "Time (ms):" + hm.timestampMs;
 
         //    return locStr;
@@ -47,15 +58,16 @@ namespace HaveWeMet.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> GetAlibi()
         {
-            Location[] al = Alibi(locations1, 1548895149104, 1548895390341);
+            Location[] al = Alibi(locations1, cfig.msLowerLimit, cfig.msUpperLimit);
             string[] locStr = new string[(al.Length * 5) + 1];
             int currentNum = 0;
 
             locStr[0] = "Locations visited:";
 
+            // Reads each line
             for (int i = 1; i <= locStr.Length - 1; i += 5)
             {
-                currentNum = (i + 4) / 5; //
+                currentNum = (i + 4) / 5;   // Updated count of the current location object
 
                 locStr[i] = "location: " + (currentNum).ToString();
                 locStr[i + 1] = "Latitude: " + al[currentNum - 1].latitudeE7.ToString();

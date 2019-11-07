@@ -1,0 +1,6 @@
+{
+  "msThreshold": 86400000,
+  "distThreshold": 20,
+  "msLowerLimit": 1548895149104,
+  "msUpperLimit": 1548895390341
+}
